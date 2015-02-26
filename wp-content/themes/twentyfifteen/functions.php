@@ -128,6 +128,31 @@ add_action( 'after_setup_theme', 'twentyfifteen_setup' );
  *
  * @link https://codex.wordpress.org/Function_Reference/register_sidebar
  */
+
+add_action( 'wp_enqueue_scripts', 'mysite_enqueue' );
+
+function mysite_enqueue() {
+    $ss_url = get_stylesheet_directory_uri();
+    wp_enqueue_script( 'mysite-scripts', plugins_url( '/fwds3dcov/js/FWDSimple3DCoverflow.js'), array(), '', 'all' );
+    wp_enqueue_script("jquery-ui-tabs");
+    wp_enqueue_script("jquery-ui-sortable");
+    wp_enqueue_script("jquery-ui-accordion");
+    wp_enqueue_script("jquery-ui-tooltip");
+}
+
+function wptuts_styles_with_the_lot()
+{
+    // Register the style like this for a plugin:
+    wp_register_style( 'custom-style', plugins_url( '/fwds3dcov/css/fwds3dcov.css' ), array(), '', 'all' );
+    // or
+    // Register the style like this for a theme:
+    // wp_register_style( 'custom-style', get_template_directory_uri() . '/css/custom-style.css', array(), '20120208', 'all' );
+ 
+    // For either a plugin or a theme, you can then enqueue the style:
+    wp_enqueue_style( 'custom-style' );
+}
+add_action( 'wp_enqueue_scripts', 'wptuts_styles_with_the_lot' );
+
 function twentyfifteen_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Widget Area', 'twentyfifteen' ),
@@ -329,3 +354,6 @@ require get_template_directory() . '/inc/template-tags.php';
  * @since Twenty Fifteen 1.0
  */
 require get_template_directory() . '/inc/customizer.php';
+
+
+

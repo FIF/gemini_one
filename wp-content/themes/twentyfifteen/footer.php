@@ -1,3 +1,4 @@
+<script type='text/javascript' src='http://lichcu.icgo.gb/wp-content/plugins/fwds3dcov/js/FWDSimple3DCoverflow.js?ver=4.1.1'></script>
 <?php
 /**
  * The template for displaying the footer
@@ -8,6 +9,9 @@
  * @subpackage Twenty_Fifteen
  * @since Twenty Fifteen 1.0
  */
+
+ echo "i_could_go25";
+ echo do_shortcode('[fwds3dcov preset_id="0" playlist_id="0"]');
 ?>
 
 	</div><!-- .site-content -->
