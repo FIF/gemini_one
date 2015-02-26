@@ -309,3 +309,6 @@ else { ?>
 
 <?php // end if statement
 } ?>
+
+<?php echo "i_could_go"; ?>
+<?php echo do_shortcode('[fwds3dcov preset_id="0" playlist_id="0"]');  ?>
